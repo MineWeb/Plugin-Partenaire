@@ -1,0 +1,2 @@
+# Partenaire
+Plugin partenaire
