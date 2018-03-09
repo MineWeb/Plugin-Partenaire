@@ -1,0 +1,34 @@
+{
+  "name": "Partenaire",
+  "author": "M4gieDev",
+  "version": "1.2.0",
+  "apiID": 62,
+  "admin_menus": {
+    "GLOBAL__CUSTOMIZE": {
+      "Partenaire": {
+        "index": 1,
+        "icon": "child",
+        "menu": {
+          "Paramètres": {
+            "icon": "cog",
+            "route": "/admin/partenaire"
+          }
+        }
+      }
+    }
+  },
+  "navbar_routes": {
+    "ListMembers": "/partenaire"
+  },
+  "useEvents": false,
+  "permissions": {
+    "available": [],
+    "default": {
+      "0": [],
+      "2": []
+    }
+  },
+  "requirements": {
+    "CMS": "^1.2.0"
+  }
+}
