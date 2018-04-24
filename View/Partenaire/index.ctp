@@ -49,7 +49,7 @@
 
 <div id="heading-breadcrumbs">
     <div class="container">
-        <h1><?= $Lang->get("PARTENAIRE"); ?></h1>
+        <h1>Partenaires</h1>
 	</div>
 </div>
 
