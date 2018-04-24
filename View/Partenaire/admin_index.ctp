@@ -2,7 +2,7 @@
 <section class="content">
         <div class="box">
             <div class="box-header with-border">
-                <h3><?= $Lang->get("PARTENAIRE"); ?></h3>
+                <h3>Partenaires</h3>
             </div>
                 <h1><?= $Lang->get("ADD_PARTENAIRE"); ?></h1>
                 <div id="error_msg"></div>
@@ -11,7 +11,7 @@
                 </button>
                 <hr>
 
-                <h1><?= $Lang->get("LIST_PARTENAIRE"); ?></h1>
+                <h1>Liste des partenaires</h1>
 
                 <table class="table table-hover" id="partenaire_list">
                     <thead>
