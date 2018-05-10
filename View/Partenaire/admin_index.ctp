@@ -30,16 +30,16 @@
                             <td id="partenaire-<?= $v['id'] ?>-Channel"><?= $v['channel'] ?></td>
                             <td id="partenaire-<?= $v['id'] ?>-Pseudo"><?= $v['pseudo'] ?></td>
                             <?php if ($v['type'] == 'T') { ?>
-                                <td id="partenaire-<?= $v['id'] ?>-Plateforme">Twitter</td>
+                                <td id="partenaire-<?= $v['id'] ?>-Plateforme"><?= $Lang->get('PARTENAIRE__TWITTER') ?></td>
                             <?php } ?>
                             <?php if ($v['type'] == 'Y') { ?>
-                                <td id="partenaire-<?= $v['id'] ?>-Plateforme">Youtube</td>
+                                <td id="partenaire-<?= $v['id'] ?>-Plateforme"><?= $Lang->get('PARTENAIRE__YOUTUBE') ?></td>
                             <?php } ?>
                             <?php if ($v['type'] == 'F') { ?>
-                                <td id="partenaire-<?= $v['id'] ?>-Plateforme">Facebook</td>
+                                <td id="partenaire-<?= $v['id'] ?>-Plateforme"><?= $Lang->get('PARTENAIRE__FACEBOOK') ?></td>
                             <?php } ?>
                             <?php if ($v['type'] == 'A') { ?>
-                                <td id="partenaire-<?= $v['id'] ?>-Plateforme">Autre</td>
+                                <td id="partenaire-<?= $v['id'] ?>-Plateforme"><?= $Lang->get('PARTENAIRE__OTHER') ?></td>
                             <?php } ?>
                             <td>
                                 <a href="#" onclick="PARTENAIRE.editPartenaire(<?= $v['id'] ?>);" class="btn btn-info"><?= $Lang->get('GLOBAL__EDIT') ?></a>
@@ -77,10 +77,10 @@
                         <input type="text" class="form-control" id="desc" name="desc" placeholder="<?= $Lang->get("PARTENAIRE_ADD_DESC_PLACEHOLDER") ?>">
                         <label for="type"><?= $Lang->get("PARTENAIRE_ADD_PLATEFORME") ?></label>
                         <select name="type" id="type" data-live-search="true" class="form-control website_type" tabindex="-98">
-                        <option value="Y" selected="selected">Youtube</option>
-                        <option value="T">Twitter</option>
-                        <option value="F">Facebook</option>
-                        <option value="A">Autre</option>
+                        <option value="Y" selected="selected"><?= $Lang->get('PARTENAIRE__YOUTUBE') ?></option>
+                        <option value="T"><?= $Lang->get('PARTENAIRE__TWITTER') ?></option>
+                        <option value="F"><?= $Lang->get('PARTENAIRE__FACEBOOK') ?></option>
+                        <option value="A"><?= $Lang->get('PARTENAIRE__OTHER') ?></option>
                         </select>
                         <br />
                         <label for="atr"><?= $Lang->get("PARTENAIRE_HELP_PLATEFORME") ?></label>
