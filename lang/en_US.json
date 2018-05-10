@@ -21,5 +21,13 @@
     "PARTENAIRE_ERROR": "An error occurred while backing up the partner, please retry",
     "PARTENAIRE_REMOVING_ERROR": "An error occurred while deleting the partner, please retry",
     "PARTENAIRE_SUCCESSFULY_EDITED" : "The partner has been successfully backed up",
-    "PARTENAIRE_SUCCESSFULY_REMOVED": "The partner has been successfully deleted"
+    "PARTENAIRE_SUCCESSFULY_REMOVED": "The partner has been successfully deleted",
+	"PARTENAIRE__TWITTER": "Twitter",
+	"PARTENAIRE__TWITTER_TEXT": "Our partners Twitter",
+	"PARTENAIRE__YOUTUBE": "Youtube",
+	"PARTENAIRE__YOUTUBE_TEXT": "Our partners Youtube",
+	"PARTENAIRE__FACEBOOK": "Facebook",
+	"PARTENAIRE__FACEBOOK_TEXT": "Our partners Facebook",
+	"PARTENAIRE__OTHER": "Autre",
+	"PARTENAIRE__OTHER_TEXT": "Our other partners"
 }

@@ -58,7 +58,7 @@
         <!-- Partie Youtube -->
         <?php if ($ytb): ?>
             <div class="row">
-                <h2>Nos partenaires Youtube</h2>
+                <h2><?= $Lang->get('PARTENAIRE__YOUTUBE_TEXT') ?></h2>
             </div>
             <hr />
 
@@ -81,7 +81,7 @@
         <?php if ($twt): ?>
             <div class="row">
                 <hr />
-                <h2>Nos partenaires Twitter</h2>
+                <h2><?= $Lang->get('PARTENAIRE__TWITTER_TEXT') ?></h2>
             </div>
             <hr/>
 
@@ -104,7 +104,7 @@
         <?php if ($fb): ?>
             <div class="row">
                 <hr />
-                <h2>Nos partenaires Facebook</h2>
+                <h2><?= $Lang->get('PARTENAIRE__FACEBOOK_TEXT') ?></h2>
             </div>
             <hr />
 
@@ -128,7 +128,7 @@
         <?php if ($atr): ?>
             <div class="row">
                 <hr />
-                <h2>Nos autres partenaires</h2>
+                <h2><?= $Lang->get('PARTENAIRE__OTHER_TEXT') ?></h2>
             </div>
             <hr />
 

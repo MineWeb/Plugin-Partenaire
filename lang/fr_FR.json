@@ -21,5 +21,13 @@
     "PARTENAIRE_ERROR": "Une erreur est survenue pendant la sauvegarde du partenaire, veuillez r\u00e9essayer",
     "PARTENAIRE_REMOVING_ERROR": "Une erreur est survenue pendant la suppression du partenaire, veuillez r\u00e9essayer",
     "PARTENAIRE_SUCCESSFULY_EDITED" : "Le partenaire a bien \u00e9t\u00e9 sauvegard\u00e9e",
-    "PARTENAIRE_SUCCESSFULY_REMOVED": "Le partenaire a bien \u00e9t\u00e9 supprim\u00e9e"
+    "PARTENAIRE_SUCCESSFULY_REMOVED": "Le partenaire a bien \u00e9t\u00e9 supprim\u00e9e",
+	"PARTENAIRE__TWITTER": "Twitter",
+	"PARTENAIRE__TWITTER_TEXT": "Nos partenaires Twitter",
+	"PARTENAIRE__YOUTUBE": "Youtube",
+	"PARTENAIRE__YOUTUBE_TEXT": "Nos partenaires Youtube",
+	"PARTENAIRE__FACEBOOK": "Facebook",
+	"PARTENAIRE__FACEBOOK_TEXT": "Nos partenaires Facebook",
+	"PARTENAIRE__OTHER": "Autre",
+	"PARTENAIRE__OTHER_TEXT": "Nos autres partenaires"
 }
