@@ -1,10 +1,9 @@
 {
   "name": "Partenaire",
   "author": "M4gieDev",
-  "version": "1.2.0",
-  "apiID": 62,
+  "version": "1.2.1",
   "admin_menus": {
-    "GLOBAL__CUSTOMIZE": {
+    "GLOBAL__ADMIN_PLUGINS": {
       "Partenaire": {
         "index": 1,
         "icon": "child",
@@ -18,7 +17,7 @@
     }
   },
   "navbar_routes": {
-    "ListMembers": "/partenaire"
+    "Partenaire": "/partenaire"
   },
   "useEvents": false,
   "permissions": {
