@@ -1,18 +1,13 @@
 {
   "name": "Partenaire",
   "author": "M4gieDev",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "admin_menus": {
     "GLOBAL__ADMIN_PLUGINS": {
       "Partenaire": {
         "index": 1,
         "icon": "child",
-        "menu": {
-          "Paramètres": {
-            "icon": "cog",
-            "route": "/admin/partenaire"
-          }
-        }
+        "route": "/admin/partenaire"
       }
     }
   },
