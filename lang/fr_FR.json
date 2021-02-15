@@ -16,6 +16,8 @@
     "PARTENAIRE_CHANNEL": "Channel",
     "PARTENAIRE_PSEUDO": "Pseudo",
     "PARTENAIRE_TYPE": "Plateforme",
+    "PARTENAIRE_DESCRIPTION": "Description",
+    "PARTENAIRE_LINK": "Lien",
     "PARTENAIRE_CONFIRM_REMOVING": "\u00cAtes-vous s\u00fbr de vouloir supprimer ce partenaire ?",
     "PARTENAIRE_LOAD_ERROR": "Une erreur est survenue pendant le chargement du partenaire, veuillez r\u00e9essayer",
     "PARTENAIRE_ERROR": "Une erreur est survenue pendant la sauvegarde du partenaire, veuillez r\u00e9essayer",
