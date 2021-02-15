@@ -1,4 +1,3 @@
-
 <section class="content">
         <div class="box">
             <div class="box-header with-border">
@@ -20,6 +19,8 @@
                         <th><?= $Lang->get('PARTENAIRE_CHANNEL') ?></th>
                         <th><?= $Lang->get('PARTENAIRE_PSEUDO') ?></th>
                         <th><?= $Lang->get('PARTENAIRE_TYPE') ?></th>
+                        <th><?= $Lang->get('PARTENAIRE_DESCRIPTION') ?></th>
+                        <th><?= $Lang->get('PARTENAIRE_LINK') ?></th>
                         <th><?= $Lang->get('GLOBAL__ACTIONS') ?></th>
                     </tr>
                     </thead>
@@ -38,9 +39,11 @@
                             <?php if ($v['type'] == 'F') { ?>
                                 <td id="partenaire-<?= $v['id'] ?>-Plateforme">Facebook</td>
                             <?php } ?>
-                            <?php if ($v['type'] == 'A') { ?>
-                                <td id="partenaire-<?= $v['id'] ?>-Plateforme">Autre</td>
+                            <?php if ($v['type'] == 'D') { ?>
+                                <td id="partenaire-<?= $v['id'] ?>-Plateforme">Discord</td>
                             <?php } ?>
+                            <td id ="partenaire<?= $v['id'] ?>-Description"><?= $v['desc'] ?></td>
+                            <td id ="partenaire<?= $v['id'] ?>-Lien"><?= $v['link'] ?></td>
                             <td>
                                 <a href="#" onclick="PARTENAIRE.editPartenaire(<?= $v['id'] ?>);" class="btn btn-info"><?= $Lang->get('GLOBAL__EDIT') ?></a>
                                 <a href="#" onclick="PARTENAIRE.removePartenaire(<?= $v['id'] ?>);" class="btn btn-danger"><?= $Lang->get('GLOBAL__DELETE') ?></a>
@@ -80,13 +83,10 @@
                         <option value="Y" selected="selected">Youtube</option>
                         <option value="T">Twitter</option>
                         <option value="F">Facebook</option>
-                        <option value="A">Autre</option>
+                        <option value="D">Discord</option>
                         </select>
-                        <br />
-                        <label for="atr"><?= $Lang->get("PARTENAIRE_HELP_PLATEFORME") ?></label>
-                        <img src="https://image.noelshack.com/fichiers/2017/16/1492420257-ytb.png">
-                        <img src="https://image.noelshack.com/fichiers/2017/16/1492420964-twt.png">
-                        <img src="https://image.noelshack.com/fichiers/2017/16/1492420957-fb.png">
+                        <label id="dis-label" style="visibility: hidden" for="link">Lien Discord</label>
+                        <input id="link" style="visibility: hidden" type="text" class="form-control" id="disc-link" name="link" placeholder="Lien Discord">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -99,6 +99,7 @@
 </div>
 
 <script>
+
     var PARTENAIRE = {};
     PARTENAIRE.editPartenaire = function(id){
       data = {};
@@ -117,6 +118,12 @@
                     $('#partenaire_form #pseudo').val(data.pseudo);
                     $('#partenaire_form #type').val(data.type);
                     $('#partenaire_form #desc').val(data.desc);
+
+                    if (data.type == "D") {
+                        $('#partenaire_form #link').val(data.link);
+                        document.getElementById("dis-label").style.visibility= "visible";
+                        document.getElementById("link").style.visibility= "visible";
+                    }
 
                 }
                 else if(data == 0)
@@ -189,7 +196,8 @@
             channel: $('#partenaire_form #channel').val(),
             pseudo: $('#partenaire_form #pseudo').val(),
             type: $('#partenaire_form #type').val(),
-            desc: $('#partenaire_form #desc').val()
+            desc: $('#partenaire_form #desc').val(),
+            link: $('#partenaire_form #link').val()
         };
         inputs["data[_Token][key]"] = '<?= $csrfToken ?>';
         $.ajax({
@@ -214,6 +222,7 @@
                             "<td id=\"partenaire-" + data.id + "-pseudo\">" + data.pseudo + "</td>" +
                             "<td id=\"partenaire-" + data.id + "-type\">" + data.type + "</td>" +
                             "<td id=\"partenaire-" + data.id + "-desc\">" + data.desc + "</td>" +
+                            "<td id=\"partenaire-" + data.id + "-link\">" + data.link + "</td>" +
                             "<td>" +
                             "<a href=\"#\" onclick=\"PARTENAIRE.editPartenaire(" + data.id + ");\" class=\"btn btn-info\"><?= $Lang->get('EDIT') ?></a>" +
                             "<a href=\"#\" onclick=\"PARTENAIRE.removePartenaire(" + data.id + ");\" class=\"btn btn-danger\"><?= $Lang->get('DELETE') ?></a>" +
@@ -226,6 +235,7 @@
                         $('#partenaire-' + data.id + "-pseudo").text(data.pseudo);
                         $('#partenaire-' + data.id + "-type").text(data.type);
                         $('#partenaire-' + data.id + "-desc").text(data.desc);
+                        $('#partenaire-' + data.id + "-link").text(data.link);
                     }
                     $('#partenaire_modal').modal("hide");
                 }
@@ -254,6 +264,18 @@
             var input = $(this);
             input.val("");
         });
+    });
+
+    $('select[name=type]').change(function() {
+        let object = $(this);
+
+        if (object.val() == "D") {
+            document.getElementById("dis-label").style.visibility= "visible";
+            document.getElementById("link").style.visibility= "visible";
+        } else {
+            document.getElementById("dis-label").style.visibility= "hidden";
+            document.getElementById("link").style.visibility= "hidden";
+        }
     });
 
 </script>
