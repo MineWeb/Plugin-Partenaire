@@ -50,7 +50,7 @@
 <div id="heading-breadcrumbs">
     <div class="container">
         <h1><?= $Lang->get("PARTENAIRE"); ?></h1>
-	</div>
+    </div>
 </div>
 
 <div id="content">
@@ -124,19 +124,19 @@
             </div>
         <?php endif; ?>
 
-        <!-- Partie Autre -->
-        <?php if ($atr): ?>
+        <!-- Partie Discord -->
+        <?php if ($dis): ?>
             <div class="row">
                 <hr />
-                <h2>Nos autres partenaires</h2>
+                <h2>Nos partenaires Discord</h2>
             </div>
             <hr />
 
             <?php foreach ($partenaire as $p): ?>
-                <?php if ($p['Partenaire']['type'] == 'A') { ?>
+                <?php if ($p['Partenaire']['type'] == 'D') { ?>
                     <div class="atr-column" style="opacity: 1;">
                         <div id='pseudo'>
-                            <a href= "<?= $p['Partenaire']['channel']; ?>"><h3 id='pseudo'><?= $p['Partenaire']['pseudo']; ?></h3></a>
+                            <a target="_blank" href= "<?= $p['Partenaire']['link']; ?>"><h3 id='pseudo'><?= $p['Partenaire']['pseudo']; ?></h3></a>
                         </div>
                         <p><?= $p['Partenaire']['desc']; ?></p>
                     </div>

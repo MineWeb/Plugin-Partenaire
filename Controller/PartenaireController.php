@@ -3,8 +3,8 @@ class PartenaireController extends PartenaireAppController{
 
 
 
-	public function index(){
-		$this->set('partenaire', $this->Partenaire->find('all'));
+    public function index(){
+    	$this->set('partenaire', $this->Partenaire->find('all'));
         $this->set('total', $this->Partenaire->find('count'));
         $this->set('ytb', $this->Partenaire->find('count', array(
         'conditions' => array('Partenaire.type' => 'Y')
@@ -15,8 +15,8 @@ class PartenaireController extends PartenaireAppController{
         $this->set('fb', $this->Partenaire->find('count', array(
         'conditions' => array('Partenaire.type' => 'F')
         )));
-        $this->set('atr', $this->Partenaire->find('count', array(
-        'conditions' => array('Partenaire.type' => 'A')
+        $this->set('dis', $this->Partenaire->find('count', array(
+        'conditions' => array('Partenaire.type' => 'D')
         )));
 
 	}
@@ -76,6 +76,7 @@ class PartenaireController extends PartenaireAppController{
                     $partenaire['pseudo'] = $data['pseudo'];
                     $partenaire['type'] = $data['type'];
 					$partenaire['desc'] = $data['desc'];
+                    $partenaire['link'] = $data['link'];
                     if($this->Partenaire->save($partenaire)){
                         $return = json_encode($partenaire);
                     }
@@ -83,12 +84,23 @@ class PartenaireController extends PartenaireAppController{
                         $return = 1;
                 }else if($data['action'] == "add"){
                     $this->Partenaire->read(null, null);
-                    $this->Partenaire->set([
-                        "channel" => $data['channel'],
-                        "pseudo" => $data['pseudo'],
-                        "type" => $data['type'],
-						"desc" => $data['desc']
-                    ]);
+                    
+                    if ($data['type'] == "D") {
+                        $this->Partenaire->set([
+                            "channel" => $data['channel'],
+                            "pseudo" => $data['pseudo'],
+                            "type" => $data['type'],
+        					"desc" => $data['desc'],
+                            "link" => $data['link']
+                        ]);
+                    } else {
+                        $this->Partenaire->set([
+                            "channel" => $data['channel'],
+                            "pseudo" => $data['pseudo'],
+                            "type" => $data['type'],
+    						"desc" => $data['desc']
+                        ]);
+                    }
                     if($partenaire = $this->Partenaire->save()){
                         $return = json_encode([
                             "action" => "add",
@@ -96,7 +108,8 @@ class PartenaireController extends PartenaireAppController{
 	                        "channel" => $data['channel'],
 	                        "pseudo" => $data['pseudo'],
 	                        "type" => $data['type'],
-							"desc" => $data['desc']
+							"desc" => $data['desc'],
+                            "link" => $data['link']
                         ]);
                     }
                     else
